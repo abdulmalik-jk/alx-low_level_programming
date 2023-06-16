@@ -8,6 +8,7 @@
 int main(void)
 {
 	int i;
+
 	for (i = 0; 1 < 16; i++)
 	{
 		if (i < 10)
