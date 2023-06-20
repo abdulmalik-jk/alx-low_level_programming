@@ -7,7 +7,7 @@
  *Return: returns the absolute value
  */
 
-int_abs(int n)
+int _abs(int n)
 {
 	return (abs(n));
 }
