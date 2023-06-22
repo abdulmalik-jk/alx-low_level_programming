@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
- *main - prints numbers form 1 to 100, repacing
+ *main - prints numbers form 1 to 100, replacing
  *multiples of 3 with 'Fizz', multiples of 5 with
  *'Buzz' and multiples of 3 and 5 with 'FizzBuzz'
  *
@@ -13,29 +13,23 @@ int main(void)
 
 	for (i = 0; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 != 0)
-		{
-			printf("Fizz ");
-		}
-		else if (i % 5 == 0 && i % 3 != 0)
-		{
-			printf("Buzz");
-			if (i != 100)
-			{
-				printf(" ");
-			}
-		}
-		else if (i % 5 == 0 && i % 3 == 0)
+		if (i % 15 == 0)
 		{
 			printf("FizzBuzz ");
+			continue;
 		}
-		else
+		else if (i % 3 == 0)
 		{
-			printf("%d ", i);
+			printf("Fizz ");
+			continue;
 		}
+		else if (i % 5 == 0)
+
+		{
+			printf("Buzz ");
+			continue;
+		}
+		printf("%d ", i);
 	}
 	printf("\n");
-
-		return (0);
 }
-
