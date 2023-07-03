@@ -14,7 +14,7 @@ unsigned int _strspn(char *s, char *accept)
 	unsigned int i, j, k;
 
 	i = j = k = 0;
-	if (*s == '\0' && *accept == '\0')
+	if (*s == '\0' || *accept == '\0')
 	{
 		return (k);
 	}
