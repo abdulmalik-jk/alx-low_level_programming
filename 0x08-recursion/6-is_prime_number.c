@@ -25,13 +25,13 @@ int _prime(int n, int a)
 }
 
 /**
- *_is_prime_number - returns 1 if the input integer
+ *is_prime_number - returns 1 if the input integer
  *is a prime number, otherwise return 0
  *@n: input
  *Return: 1 if it's a prime number, otherwise, 0
  */
 
-int _is_prime_number(int n)
+int is_prime_number(int n)
 {
 	if (n < 2)
 	{
