@@ -77,7 +77,7 @@ i = 0;
 while (format && *(format + i))
 {
 	j = 0;
-	while (j < 4 && *(format + 1) != *(data[j].c))
+	while (j < 4 && *(format + i) != *(data[j].c))
 	{
 		j++;
 	}
