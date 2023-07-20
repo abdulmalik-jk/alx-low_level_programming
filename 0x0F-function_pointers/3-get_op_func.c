@@ -7,7 +7,7 @@
  * Return: pointer to function
  */
 
-int (*get_op_func(char *s))(int, int)
+int (*get_op_func(char *s))(int a, int b)
 {
 	op_t new;
 
@@ -15,13 +15,13 @@ int (*get_op_func(char *s))(int, int)
 	new.f = NULL;
 
 	while (*new.op == '+' || *new.op == '-' || *new.op == '*'
-			|| new.op == '/' || new.op == '%')
+			|| *new.op == '/' || *new.op == '%')
 	{
-		new.f = (*new.op == '+') ? op_add :
-			(*new.op == '-') ? op_sub :
-			(*new.op == '*') ? op_mul :
-			(*new.op == '/') ? op_div :
-			(*new.op == '%') ? op_mod :
+		new.f = (*new.op == '+') ? &op_add :
+			(*new.op == '-') ? &op_sub :
+			(*new.op == '*') ? &op_mul :
+			(*new.op == '/') ? &op_div :
+			(*new.op == '%') ? &op_mod :
 			NULL;
 		new.op++;
 	}
