@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <string.h>
 
 /**
  * add_node_end - add node to the end of a linked list
@@ -10,28 +11,28 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new, *down;
-	int i;
-	char *cp_s;
+	char *cpy;
+
+	int len;
+
+	list_t *new;
+
+	list_t *last;
 
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
-	{
 		return (NULL);
-	}
-	cp_s = strdup(str);
-	if (cp_s == NULL)
+	cpy = strdup(str);
+	if (str == NULL)
 	{
 		free(new);
 		return (NULL);
 	}
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	new->len = i;
-	new->str = cp_s;
+	len = 0;
+	while (str[len])
+		len++;
+	new->str = cpy;
+	new->len = len;
 	new->next = NULL;
 	if (*head == NULL)
 	{
@@ -39,12 +40,12 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	else
 	{
-		down = *head;
-		while (down->next != NULL)
+		last = *head;
+		while (last->next != NULL)
 		{
-			down = down->next;
+			last = last->next;
 		}
-		down->next = new;
+		last->next = new;
 	}
 	return (*head);
 }
