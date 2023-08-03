@@ -21,7 +21,7 @@ void print_binary(unsigned long int n)
 	}
 	check = check << (i - 1);
 
-	for (; 1 > 0; i--)
+	for (; i > 0; i--)
 	{
 		if (n & check)
 		{
